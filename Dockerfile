@@ -1,5 +1,5 @@
-FROM node:19
+FROM node:19-alpine
 WORKDIR /freshbites-app
-COPY . .
+COPY index.html server.js .
 EXPOSE 3000
 CMD ["node","server.js"]
