@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: cont-1
-          image: divakarchakali1/rps
+          image: divakarchakali1/ttt
           ports:
           - containerPort: 3000
 
