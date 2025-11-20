@@ -1,0 +1,35 @@
+# Deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rps-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rps
+  template:
+    metadata:
+      labels:
+        app: rps
+    spec:
+      containers:
+        - name: cont-1
+          image: divakarchakali1/rps
+          ports:
+          - containerPort: 3000
+
+# Service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysvc
+spec:
+  type: LoadBalancer
+  selector:
+    app: rps
+  ports:
+    - port: 3000
+      targetPort: 3000
